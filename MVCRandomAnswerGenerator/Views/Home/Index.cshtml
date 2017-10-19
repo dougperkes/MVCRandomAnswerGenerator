@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<MVCRandomAnswerGenerator.Models.QuestionAndAnswer>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = ViewBag.CustomerName + " Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET MVC Magic 8 ball</h1>
+    <h1>@(ViewBag.CustomerName) - ASP.NET MVC Magic 8 ball</h1>
+    <h2>Version: @ViewBag.Version</h2>
+    <p><img src="@ViewBag.LogoUrl" /></p>
     <p class="lead">Ask your question, and get the answer.</p>
 </div>
 @using (Html.BeginForm())
@@ -35,4 +37,8 @@
         @item.Answer
     </div>
 </div>
+
+    <div class="row">
+        Database name: @(ViewBag.DbName)
+    </div>
 }

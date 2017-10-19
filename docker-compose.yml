@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mvcrandomanswergenerator:
+    image: dougperkes/mvcrandomanswergenerator
+    build:
+      context: .\MVCRandomAnswerGenerator
+      dockerfile: Dockerfile
+    environment:
+    - CM_CUSTOMER_NAME=BYU
+    - CM_LOGO_URL=https://armtemplatesdougper.blob.core.windows.net/public/logos/BYU_SM8.jpg
+    - CM_DATABASE_NAME=SampleDBName

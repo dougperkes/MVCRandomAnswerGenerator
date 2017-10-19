@@ -13,6 +13,11 @@ namespace MVCRandomAnswerGenerator.Controllers
 
     public ActionResult Index()
         {
+            ViewBag.CustomerName = CMConfiguration.CustomerName;
+            ViewBag.LogoUrl = CMConfiguration.LogoUrl;
+            ViewBag.DbName = CMConfiguration.DbName;
+            ViewBag.Version = CMConfiguration.Version;
+
             // Ask a question.
             // Return with the answer.
             return View(allAnswers);
@@ -22,6 +27,11 @@ namespace MVCRandomAnswerGenerator.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(string NextQuestion)
         {
+            ViewBag.CustomerName = CMConfiguration.CustomerName;
+            ViewBag.LogoUrl = CMConfiguration.LogoUrl;
+            ViewBag.DbName = CMConfiguration.DbName;
+            ViewBag.Version = CMConfiguration.Version;
+
             var latest = new QuestionAndAnswer
             {
                 Question = NextQuestion,
